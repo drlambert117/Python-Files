@@ -1,6 +1,18 @@
-my_pets = [['Molly', 'dog', 'large', 'friendly'], ['Kitty', 'cat', 'medium', 'antisocial'], ['Purry', 'cat', 'small', 'sweet'], ['Togepi', 'hedghog', 'tiny', 'timid']]
+import json
 
-print('I have ' + str(len(my_pets)) + ' pets:')
+# my_pets = [['Molly', 'dog', 'large', 'friendly'], ['Kitty', 'cat', 'medium', 'antisocial'], ['Purry', 'cat', 'small', 'sweet'], ['Togepi', 'hedghog', 'tiny', 'timid']]
 
-for i in range(len(my_pets)) :
-    print(my_pets[i][0] + ' is a ' + my_pets[i][2] + ', ' +  my_pets[i][3] + ' ' + my_pets[i][1])
+# my_pets = '{"pets":[{"name":"Molly","species":"dog","size":"large","personality":"friendly"},{"name":"Kitty","species":"cat","size":"medium","personality":"antisocial"},{"name":"Purry","species":"cat","size":"small","personality":"sweet"}]}'
+
+my_pets = '[{"name":"Molly","species":"dog","size":"large","personality":"friendly"},{"name":"Kitty","species":"cat","size":"medium","personality":"antisocial"},{"name":"Purry","species":"cat","size":"small","personality":"sweet"}]'
+pets = json.loads(my_pets)
+
+for i in pets:
+    print(i["name"])
+
+
+# print('I have ' + str(len(pets)) + ' pets:')
+
+
+# for i in range(len(pets)) :
+#     print(pets[i][0] + ' is a ' + pets[i][2] + ', ' +  pets[i][3] + ' ' + pets[i][1])
