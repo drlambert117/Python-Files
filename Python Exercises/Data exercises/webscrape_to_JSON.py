@@ -1,6 +1,7 @@
 #Imports
 import urllib.request
 from bs4 import BeautifulSoup
+import json
 import pandas as pd
 
 #Catches user's url input and opens it
@@ -25,10 +26,15 @@ for row in info:
     A.append(buyer_names[0].find(text = True))
     B.append(item_price[0].find(text = True))
 
-#use pandas to convert list to data frame
-df=pd.DataFrame()
-df['Buyer Name']=A
-df['Item Price']=B
+json_data =  json.dumps([{'Buyer Name': buyer_name, 'Item Price': item_price} for buyer_name, item_price in zip(A, B)])
 
-#Display dataframe
-print(df)
+with open('output.webscrape_to_JSON.json', 'w') as outfile:
+    json.dump(json_data, outfile)
+
+# #use pandas to convert list to data frame
+# df=pd.DataFrame()
+# df['Buyer Name']=A
+# df['Item Price']=B
+
+# #Display dataframe
+# print(df)
