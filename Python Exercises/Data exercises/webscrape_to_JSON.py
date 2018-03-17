@@ -18,7 +18,7 @@ info = soup.find_all('div', title = 'buyer-info')
 A=[]
 B=[]
 
-#
+#for statement that sorts data by tags and appends them to the generated lists
 for row in info:
     buyer_names = row.find_all('div', title = 'buyer-name')
     item_price = row.find_all('span', class_ =  'item-price')
@@ -30,4 +30,5 @@ df=pd.DataFrame()
 df['Buyer Name']=A
 df['Item Price']=B
 
+#Display dataframe
 print(df)
