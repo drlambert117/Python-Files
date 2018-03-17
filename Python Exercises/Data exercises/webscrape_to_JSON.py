@@ -4,8 +4,7 @@ from bs4 import BeautifulSoup
 import json
 import pandas as pd
 
-#Catches user's url input and opens it
-# site = input('Please enter the url for the page you would like the data for...')
+#Opens the link to the web page to be scraped
 test_data = 'http://econpy.pythonanywhere.com/ex/001.html'
 page = urllib.request.urlopen(test_data)
 
@@ -26,8 +25,10 @@ for row in info:
     A.append(buyer_names[0].find(text = True))
     B.append(item_price[0].find(text = True))
 
+#Combines lists A and B and formats them as JSON
 json_data =  json.dumps([{'Buyer Name': buyer_name, 'Item Price': item_price} for buyer_name, item_price in zip(A, B)])
 
+#Writes the json_data to a file called 'output.webscrape_to_JSON.json'
 with open('output.webscrape_to_JSON.json', 'w') as outfile:
     json.dump(json_data, outfile)
 
