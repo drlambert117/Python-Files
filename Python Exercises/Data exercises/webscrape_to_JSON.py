@@ -31,10 +31,10 @@ json_data =  json.dumps([{'Buyer Name': buyer_name, 'Item Price': item_price} fo
 with open('output.webscrape_to_JSON.json', 'w') as outfile:
     json.dump(json_data, outfile)
 
-# #use pandas to convert list to data frame
-# df=pd.DataFrame()
-# df['Buyer Name']=A
-# df['Item Price']=B
+#use pandas to convert list to data frame
+df=pd.DataFrame()
+df['Buyer Name']=A
+df['Item Price']=B
 
-# #Display dataframe
-# print(df)
+#Display dataframe
+print(df)
