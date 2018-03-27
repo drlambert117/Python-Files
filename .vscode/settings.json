@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.pythonPath": "/Users/Dlambert/anaconda3/bin/python",
     "git.ignoreLimitWarning": true
 }
