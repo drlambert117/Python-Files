@@ -25,8 +25,8 @@ def get_record(file_path, keys_to_use):
     return tuple(record)
 
 #Tests
-test_path = os.path.join('data sets', 'artworks', 'a', '000', 'a00001-1035.json')
-test_record= get_record(test_path, KEYS_TO_USE)
+# test_path = os.path.join('data sets', 'artworks', 'a', '000', 'a00001-1035.json')
+# test_record= get_record(test_path, KEYS_TO_USE)
 
 
 #========================================================================================
