@@ -10,13 +10,18 @@ KEYS_TO_USE= ['id', 'all_artists', 'title', 'medium', 'dateText', 'acquisitionYe
 #===================================================================
 def get_record(file_path, keys_to_use):
 
+#Opens file path and loads file into JSON module
     with open(file_path) as artwork_file:
         content = json.load(artwork_file)
     
+    #Defines list to be returned
     record = []
+
+    #Appends data that aligns with defined keys to record list.
     for field in keys_to_use:
         record.append(content[field])
 
+    #Returns record
     return tuple(record)
 
 #Tests
@@ -32,7 +37,11 @@ def read_artworks_from_json(keys_to_use):
     #Path to dataset
     JSON_ROOT = os.path.join('data sets', 'artworks')
 
+    #Define list to pass into dataframe
     artworks = []
+
+    #Iterates through artworks folder and: 
+        # Verifys each file is a .json file, extracts records with keys matching the defined keys using get_record() function, adds records to artworks list.
     for root, _, files in os.walk(JSON_ROOT): 
         for f in files:
             if f.endswith('json'):
@@ -40,6 +49,7 @@ def read_artworks_from_json(keys_to_use):
                 artworks.append(record)
             break
 
+    #Creates and returns dataframe from artworks list and defined keys 
     df = pd.DataFrame.from_records(artworks, columns=keys_to_use, index='id')
     return df
 
