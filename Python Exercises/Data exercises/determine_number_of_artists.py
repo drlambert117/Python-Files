@@ -1,3 +1,5 @@
+# Counts the number of unique artists in the dataset
+
 import pandas as pd
 import os
 

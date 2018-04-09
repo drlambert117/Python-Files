@@ -1,3 +1,5 @@
+#Counts number of works a user-specified artist has created in the dataset
+
 import pandas as pd
 import os
 
