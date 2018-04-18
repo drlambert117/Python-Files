@@ -1,5 +1,5 @@
 # Dakota Lambert - Spring 2018 Repository
-Repository for python files created during a Python Independent Study
+Repository for python files created throughout my Spring 2018 Python Independent Study.
 
 ## Tools and dependencies used in the development of this repositories files. :wrench:
 
