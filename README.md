@@ -10,6 +10,6 @@ Repository for python files created during a Python Independent Study
 
 ## Running files in this Repository
 After installing the neccisary dependencies, navigate to the directory of the specific file you wish to run. 
-(Example: `cd sp28-lambert/Python Exercises/Python Basics' or 'cd sp28-lambert/Python Exercises/Data Exercises`)
+(Example: `cd sp28-lambert/Python Exercises/Python Basics` or `cd sp28-lambert/Python Exercises/Data Exercises`)
 
 Run the file by using the command `python2` followed by the filename. (example: `python2 filename.py`)
